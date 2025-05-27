@@ -480,3 +480,99 @@ INSERT ALL
 SELECT * FROM DUAL;
 ```
 
+17. Show the values of departmental table.
+18. Select the department names and their locations.
+19. Show the employees f_name , l_name , salary and the salary after 1000rs. Bonus.
+20. Show the employees annual salary with a 1000rs. Yearly bonus and the annual salary
+with a 100rs. Monthly bonus.
+21. Show f_name as NAME and annual salary as ANNSAL from the employee table.
+22. Show the l_name as LasT AND 100rs. Incremented salary as NewSal.
+23. Show the emp_id, f_name, l_name, job_type of the employee getting highest salary.
+24. Show the emp_id, f_name, l_name, job_type of the employee getting minimum salary.
+25. Show the average salary of employees in the employee table
+
+Here are the correct and simplest Oracle SQL queries for questions 17 to 25:
+
+---
+
+**17. SHOW THE VALUES OF DEPARTMENTAL TABLE.**
+
+```sql
+SELECT * FROM DEPARTMENT;
+```
+
+---
+
+**18. SELECT THE DEPARTMENT NAMES AND THEIR LOCATIONS.**
+
+```sql
+SELECT D_NAME, D_LOC FROM DEPARTMENT;
+```
+
+---
+
+**19. SHOW THE EMPLOYEES F\_NAME, L\_NAME, SALARY AND THE SALARY AFTER 1000RS. BONUS.**
+
+```sql
+SELECT F_NAME, L_NAME, SALARY, SALARY + 1000 AS BONUS_SALARY FROM EMPLOYEE;
+```
+
+---
+
+**20. SHOW THE EMPLOYEES ANNUAL SALARY WITH A 1000RS. YEARLY BONUS AND THE ANNUAL SALARY WITH A 100RS. MONTHLY BONUS.**
+
+```sql
+SELECT 
+  F_NAME, 
+  L_NAME, 
+  (SALARY * 12) + 1000 AS YEARLY_BONUS_SALARY,
+  (SALARY * 12) + (100 * 12) AS MONTHLY_BONUS_SALARY 
+FROM EMPLOYEE;
+```
+
+---
+
+**21. SHOW F\_NAME AS NAME AND ANNUAL SALARY AS ANNSAL FROM THE EMPLOYEE TABLE.**
+
+```sql
+SELECT F_NAME AS NAME, SALARY * 12 AS ANNSAL FROM EMPLOYEE;
+```
+
+---
+
+**22. SHOW THE L\_NAME AS LAST AND 100RS. INCREMENTED SALARY AS NEWSAL.**
+
+```sql
+SELECT L_NAME AS LAST, SALARY + 100 AS NEWSAL FROM EMPLOYEE;
+```
+
+---
+
+**23. SHOW THE EMP\_ID, F\_NAME, L\_NAME, JOB\_TYPE OF THE EMPLOYEE GETTING HIGHEST SALARY.**
+
+```sql
+SELECT EMP_ID, F_NAME, L_NAME, JOB_TYPE
+FROM EMPLOYEE
+WHERE SALARY = (SELECT MAX(SALARY) FROM EMPLOYEE);
+```
+
+---
+
+**24. SHOW THE EMP\_ID, F\_NAME, L\_NAME, JOB\_TYPE OF THE EMPLOYEE GETTING MINIMUM SALARY.**
+
+```sql
+SELECT EMP_ID, F_NAME, L_NAME, JOB_TYPE
+FROM EMPLOYEE
+WHERE SALARY = (SELECT MIN(SALARY) FROM EMPLOYEE);
+```
+
+---
+
+**25. SHOW THE AVERAGE SALARY OF EMPLOYEES IN THE EMPLOYEE TABLE.**
+
+```sql
+SELECT AVG(SALARY) AS AVERAGE_SALARY FROM EMPLOYEE;
+```
+
+---
+
