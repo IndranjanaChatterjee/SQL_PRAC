@@ -723,3 +723,68 @@ FROM   PARTICIPATED p
 WHERE  c.MODEL = 'CIVIC';
 ```
 
+4. Show the different department names from department table
+5. Show the employee names who works in ‘Sales’
+6. Show the employee names who gets salary of more than 50000 per month
+7. Show the details of the employee whose manager id is not 1
+8. Show the employee details whose salary ranges between 40000 and 70000
+9. Show the details of the employees who works under the manager having id 1, 6 and 8
+10. Select the f_name and salary of those employees whose last name starts with ‘K’
+11. Select the f_name and salary of those employees whose last name starts with ‘K’ and
+ends with ‘R’
+12. Show the details of those employees where 3rd letter of l_name is ‘o’
+13. Select the details of those employees who works as an engineer with monthly salary
+more than 50000 
+```
+-- 4. SHOW THE DIFFERENT DEPARTMENT NAMES FROM DEPARTMENT TABLE
+SELECT DISTINCT D_NAME
+FROM DEPARTMENT;
+
+-- 5. SHOW THE EMPLOYEE NAMES WHO WORKS IN ‘SALES’
+SELECT F_NAME || ' ' || L_NAME AS EMPLOYEE_NAME
+FROM EMPLOYEE
+WHERE DEPT = 'SALES';
+
+-- 6. SHOW THE EMPLOYEE NAMES WHO GETS SALARY OF MORE THAN 50000 PER MONTH
+SELECT F_NAME || ' ' || L_NAME AS EMPLOYEE_NAME, SALARY
+FROM EMPLOYEE
+WHERE SALARY > 50000;
+
+-- 7. SHOW THE DETAILS OF THE EMPLOYEE WHOSE MANAGER ID IS NOT 1
+SELECT *
+FROM EMPLOYEE
+WHERE MANAGER_ID != 1;
+
+-- 8. SHOW THE EMPLOYEE DETAILS WHOSE SALARY RANGES BETWEEN 40000 AND 70000
+SELECT *
+FROM EMPLOYEE
+WHERE SALARY BETWEEN 40000 AND 70000;
+
+-- 9. SHOW THE DETAILS OF THE EMPLOYEES WHO WORKS UNDER THE MANAGER HAVING ID 1, 6 AND 8
+SELECT *
+FROM EMPLOYEE
+WHERE MANAGER_ID IN (1, 6, 8);
+
+-- 10. SELECT THE F_NAME AND SALARY OF THOSE EMPLOYEES WHOSE LAST NAME STARTS WITH ‘K’
+SELECT F_NAME, SALARY
+FROM EMPLOYEE
+WHERE L_NAME LIKE 'K%';
+
+-- 11. SELECT THE F_NAME AND SALARY OF THOSE EMPLOYEES WHOSE LAST NAME STARTS WITH ‘K’ AND ENDS WITH ‘R’
+SELECT F_NAME, SALARY
+FROM EMPLOYEE
+WHERE L_NAME LIKE 'K%R';
+
+-- 12. SHOW THE DETAILS OF THOSE EMPLOYEES WHERE 3RD LETTER OF L_NAME IS ‘O’
+SELECT *
+FROM EMPLOYEE
+WHERE SUBSTR(L_NAME, 3, 1) = 'O';
+
+-- 13. SELECT THE DETAILS OF THOSE EMPLOYEES WHO WORKS AS AN ENGINEER WITH MONTHLY SALARY MORE THAN 50000
+SELECT *
+FROM EMPLOYEE
+WHERE JOB_TYPE = 'ENGINEER'
+  AND SALARY > 50000;
+```
+
+
