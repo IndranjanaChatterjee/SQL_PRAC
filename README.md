@@ -222,3 +222,261 @@ INSERT INTO loc (loc_id, address) VALUES (3, 'Bengaluru');
 INSERT INTO loc (loc_id, address) VALUES (4, 'Chennai');
 INSERT INTO loc (loc_id, address) VALUES (5, 'Kolkata');
 
+
+```
+INSERT ALL
+  INTO EMPLOYEE (
+    EMP_ID,
+    F_NAME,
+    L_NAME,
+    JOB_TYPE,
+    SALARY,
+    COMMISSION,
+    DEPT,
+    MANAGER_ID,
+    DATE_OF_JOINING
+  ) VALUES (
+    1,
+    'ARUN',
+    'KHAN',
+    'MANAGER',
+    90000,
+    NULL,
+    'PRODUCTION',
+    NULL,
+    TO_DATE('04-JAN-1998','DD-MON-YYYY')
+  )
+  INTO EMPLOYEE (
+    EMP_ID,
+    F_NAME,
+    L_NAME,
+    JOB_TYPE,
+    SALARY,
+    COMMISSION,
+    DEPT,
+    MANAGER_ID,
+    DATE_OF_JOINING
+  ) VALUES (
+    2,
+    'BARUN',
+    'KUMAR',
+    'MANAGER',
+    80000,
+    NULL,
+    'MARKETING',
+    NULL,
+    TO_DATE('09-FEB-1998','DD-MON-YYYY')
+  )
+  INTO EMPLOYEE (
+    EMP_ID,
+    F_NAME,
+    L_NAME,
+    JOB_TYPE,
+    SALARY,
+    COMMISSION,
+    DEPT,
+    MANAGER_ID,
+    DATE_OF_JOINING
+  ) VALUES (
+    3,
+    'CHITRA',
+    'KAPOOR',
+    'ENGINEER',
+    60000,
+    NULL,
+    'PRODUCTION',
+    1,
+    TO_DATE('08-JAN-1998','DD-MON-YYYY')
+  )
+  INTO EMPLOYEE (
+    EMP_ID,
+    F_NAME,
+    L_NAME,
+    JOB_TYPE,
+    SALARY,
+    COMMISSION,
+    DEPT,
+    MANAGER_ID,
+    DATE_OF_JOINING
+  ) VALUES (
+    4,
+    'DHEERAJ',
+    'MISHRA',
+    'MANAGER',
+    75000,
+    NULL,
+    'SALES',
+    4,
+    TO_DATE('27-DEC-2001','DD-MON-YYYY')
+  )
+  INTO EMPLOYEE (
+    EMP_ID,
+    F_NAME,
+    L_NAME,
+    JOB_TYPE,
+    SALARY,
+    COMMISSION,
+    DEPT,
+    MANAGER_ID,
+    DATE_OF_JOINING
+  ) VALUES (
+    5,
+    'EMMA',
+    'DUTT',
+    'ENGINEER',
+    55000,
+    NULL,
+    'PRODUCTION',
+    1,
+    TO_DATE('20-MAR-2002','DD-MON-YYYY')
+  )
+  INTO EMPLOYEE (
+    EMP_ID,
+    F_NAME,
+    L_NAME,
+    JOB_TYPE,
+    SALARY,
+    COMMISSION,
+    DEPT,
+    MANAGER_ID,
+    DATE_OF_JOINING
+  ) VALUES (
+    6,
+    'FLOKI',
+    'DUTT',
+    'ACCOUNTANT',
+    70000,
+    NULL,
+    'ACCOUNTS',
+    6,
+    TO_DATE('16-JUL-2000','DD-MON-YYYY')
+  )
+  INTO EMPLOYEE (
+    EMP_ID,
+    F_NAME,
+    L_NAME,
+    JOB_TYPE,
+    SALARY,
+    COMMISSION,
+    DEPT,
+    MANAGER_ID,
+    DATE_OF_JOINING
+  ) VALUES (
+    7,
+    'DHEERAJ',
+    'KUMAR',
+    'CLERK',
+    40000,
+    NULL,
+    'ACCOUNTS',
+    6,
+    TO_DATE('01-JUL-2016','DD-MON-YYYY')
+  )
+  INTO EMPLOYEE (
+    EMP_ID,
+    F_NAME,
+    L_NAME,
+    JOB_TYPE,
+    SALARY,
+    COMMISSION,
+    DEPT,
+    MANAGER_ID,
+    DATE_OF_JOINING
+  ) VALUES (
+    8,
+    'SAUL',
+    'GOOD',
+    'ENGINEER',
+    60000,
+    NULL,
+    'R&D',
+    NULL,
+    TO_DATE('06-SEP-2014','DD-MON-YYYY')
+  )
+  INTO EMPLOYEE (
+    EMP_ID,
+    F_NAME,
+    L_NAME,
+    JOB_TYPE,
+    SALARY,
+    COMMISSION,
+    DEPT,
+    MANAGER_ID,
+    DATE_OF_JOINING
+  ) VALUES (
+    9,
+    'MOU',
+    'BHAT',
+    'CLERK',
+    30000,
+    NULL,
+    'SALES',
+    4,
+    TO_DATE('08-MAR-2015','DD-MON-YYYY')
+  )
+  INTO EMPLOYEE (
+    EMP_ID,
+    F_NAME,
+    L_NAME,
+    JOB_TYPE,
+    SALARY,
+    COMMISSION,
+    DEPT,
+    MANAGER_ID,
+    DATE_OF_JOINING
+  ) VALUES (
+    10,
+    'SUNNY',
+    'DEOL',
+    'SALESMAN',
+    20000,
+    10000,
+    'MARKETING',
+    2,
+    TO_DATE('31-MAR-2001','DD-MON-YYYY')
+  )
+  INTO EMPLOYEE (
+    EMP_ID,
+    F_NAME,
+    L_NAME,
+    JOB_TYPE,
+    SALARY,
+    COMMISSION,
+    DEPT,
+    MANAGER_ID,
+    DATE_OF_JOINING
+  ) VALUES (
+    11,
+    'BOBBY',
+    'DEOL',
+    'ENGINEER',
+    35000,
+    NULL,
+    'R&D',
+    8,
+    TO_DATE('17-OCT-2017','DD-MON-YYYY')
+  )
+  INTO EMPLOYEE (
+    EMP_ID,
+    F_NAME,
+    L_NAME,
+    JOB_TYPE,
+    SALARY,
+    COMMISSION,
+    DEPT,
+    MANAGER_ID,
+    DATE_OF_JOINING
+  ) VALUES (
+    12,
+    'AAMIR',
+    'KHAN',
+    'SALESMAN',
+    15000,
+    5000,
+    'MARKETING',
+    2,
+    TO_DATE('11-JAN-2013','DD-MON-YYYY')
+  )
+SELECT * FROM DUAL;
+```
+
