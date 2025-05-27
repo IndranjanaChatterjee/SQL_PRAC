@@ -935,4 +935,77 @@ HAVING AVG(SALARY) = (
 ```
 
 
+1. Show the use of upper and lower function.
+2. Show the use of concat, instr and length function
+3. Show the use of the following functions on numeric values:
+a. Sqrt()
+b. Power()
+c. Ceil()
+d. Substr()
+e. Max()
+f. min()
+g. Round()
+h. avg()
+i. count()
+j. Exp()
+k. mod() 
+
+Here are simple Oracle-SQL examples demonstrating each function. You can run these as standalone `SELECT` statements (using `DUAL` for literals) or adapt them to your tables (e.g. `EMPLOYEE`).
+
+---
+
+**1. UPPER and LOWER**
+
+```sql
+-- Convert literal
+SELECT UPPER('Hello World')   AS upper_text,
+       LOWER('Hello World')   AS lower_text
+FROM   DUAL;
+
+-- Convert columns in EMPLOYEE
+SELECT UPPER(f_name)          AS f_name_upper,
+       LOWER(l_name)          AS l_name_lower
+FROM   EMPLOYEE;
+```
+
+---
+
+**2. CONCAT, INSTR and LENGTH**
+
+```sql
+-- Concatenate two literals
+SELECT CONCAT('SQL', 'Tutorial')     AS joined_str
+FROM   DUAL;
+
+-- Find position of substring and length of a string literal
+SELECT INSTR('COMPUTER', 'PUT')      AS pos_put,
+       LENGTH('DATABASE')            AS len_db
+FROM   DUAL;
+
+-- On table columns
+SELECT CONCAT(f_name, l_name)        AS full_name,
+       INSTR(l_name, 'K')            AS first_k_pos,
+       LENGTH(f_name)                AS fname_length
+FROM   EMPLOYEE;
+```
+
+---
+
+**3. Numeric (and a couple string) functions**
+
+| Function      | Example                                                   |
+| ------------- | --------------------------------------------------------- |
+| **a. SQRT**   | `SELECT SQRT(144)           AS root_144 FROM DUAL;`       |
+| **b. POWER**  | `SELECT POWER(2, 8)         AS two_pow_eight FROM DUAL;`  |
+| **c. CEIL**   | `SELECT CEIL(3.14)          AS ceil_val FROM DUAL;`       |
+| **d. SUBSTR** | `SELECT SUBSTR('ORACLE',2,3) AS sub_str  FROM DUAL;`      |
+| **e. MAX**    | `SELECT MAX(salary)         AS max_salary FROM EMPLOYEE;` |
+| **f. MIN**    | `SELECT MIN(salary)         AS min_salary FROM EMPLOYEE;` |
+| **g. ROUND**  | `SELECT ROUND(123.456, 2)   AS round_2    FROM DUAL;`     |
+| **h. AVG**    | `SELECT AVG(salary)         AS avg_salary FROM EMPLOYEE;` |
+| **i. COUNT**  | `SELECT COUNT(*)            AS emp_count  FROM EMPLOYEE;` |
+| **j. EXP**    | `SELECT EXP(1)              AS e_to_1     FROM DUAL;`     |
+| **k. MOD**    | `SELECT MOD(29, 5)          AS mod_29_5    FROM DUAL;`    |
+
+
 
