@@ -788,3 +788,151 @@ WHERE JOB_TYPE = 'ENGINEER'
 ```
 
 
+14. Select the employees whose department is ‘Production’ or monthly salary is more than
+60000 per month.
+15. Find the minimum salary, maximum salary, total salary, average salary of the
+employees who work in ‘Sales’ department
+16. Find the employee l_name that is first and f_name that is last if they are arranged in an
+order
+17. Find the number of employees working in each department
+18. Find the number of departments from employee table
+19. Find the average commission of the employees.
+20. Find the average salaries of the employees department wise
+21. Find the sum of salary of different job_type according to different departments
+22. Find the department name and average salaries of those departments whose average
+salary is greater than 40000
+23. Find the department name and maximum salaries of those departments whose
+maximum salary is greater than 55000
+24. Display the job_type and total monthly salary for each job_type where total payroll is
+exceeding 100000
+25. Display the name of the department having maximum average salary
+
+14. **SELECT EMPLOYEES WHOSE DEPARTMENT IS ‘PRODUCTION’ OR MONTHLY SALARY IS MORE THAN 60000**
+
+```sql
+SELECT *
+FROM EMPLOYEE
+WHERE DEPT = 'PRODUCTION'
+   OR SALARY > 60000;
+```
+
+15. **MINIMUM, MAXIMUM, TOTAL & AVERAGE SALARY OF EMPLOYEES IN ‘SALES’**
+
+```sql
+SELECT 
+  MIN(SALARY)   AS MIN_SALARY,
+  MAX(SALARY)   AS MAX_SALARY,
+  SUM(SALARY)   AS TOTAL_SALARY,
+  AVG(SALARY)   AS AVG_SALARY
+FROM EMPLOYEE
+WHERE DEPT = 'SALES';
+```
+
+16. **FIRST LAST-NAME AND LAST FIRST-NAME IN ORDER**
+    *(lexicographically first L\_NAME, lexicographically last F\_NAME)*
+
+```sql
+SELECT 
+  MIN(L_NAME) AS FIRST_LNAME,
+  MAX(F_NAME) AS LAST_FNAME
+FROM EMPLOYEE;
+```
+
+17. **NUMBER OF EMPLOYEES WORKING IN EACH DEPARTMENT**
+
+```sql
+SELECT 
+  DEPT,
+  COUNT(*) AS EMP_COUNT
+FROM EMPLOYEE
+GROUP BY DEPT;
+```
+
+18. **NUMBER OF DISTINCT DEPARTMENTS IN EMPLOYEE TABLE**
+
+```sql
+SELECT 
+  COUNT(DISTINCT DEPT) AS DEPT_COUNT
+FROM EMPLOYEE;
+```
+
+19. **AVERAGE COMMISSION OF ALL EMPLOYEES**
+
+```sql
+SELECT 
+  AVG(COMMISSION) AS AVG_COMMISSION
+FROM EMPLOYEE;
+```
+
+20. **AVERAGE SALARY DEPARTMENT-WISE**
+
+```sql
+SELECT 
+  DEPT,
+  AVG(SALARY) AS AVG_SALARY
+FROM EMPLOYEE
+GROUP BY DEPT;
+```
+
+21. **SUM OF SALARY BY JOB\_TYPE WITHIN EACH DEPARTMENT**
+
+```sql
+SELECT 
+  DEPT,
+  JOB_TYPE,
+  SUM(SALARY) AS TOTAL_SALARY
+FROM EMPLOYEE
+GROUP BY DEPT, JOB_TYPE;
+```
+
+22. **DEPT AND AVG SALARY FOR THOSE DEPTS WITH AVG\_SALARY > 40000**
+
+```sql
+SELECT 
+  DEPT,
+  AVG(SALARY) AS AVG_SALARY
+FROM EMPLOYEE
+GROUP BY DEPT
+HAVING AVG(SALARY) > 40000;
+```
+
+23. **DEPT AND MAX SALARY FOR THOSE DEPTS WITH MAX\_SALARY > 55000**
+
+```sql
+SELECT 
+  DEPT,
+  MAX(SALARY) AS MAX_SALARY
+FROM EMPLOYEE
+GROUP BY DEPT
+HAVING MAX(SALARY) > 55000;
+```
+
+24. **JOB\_TYPE AND TOTAL PAYROLL WHERE TOTAL PAYROLL > 100000**
+
+```sql
+SELECT 
+  JOB_TYPE,
+  SUM(SALARY) AS TOTAL_PAYROLL
+FROM EMPLOYEE
+GROUP BY JOB_TYPE
+HAVING SUM(SALARY) > 100000;
+```
+
+25. **DEPARTMENT WITH THE MAXIMUM AVERAGE SALARY**
+
+```sql
+SELECT DEPT
+FROM   EMPLOYEE
+GROUP BY DEPT
+HAVING AVG(SALARY) = (
+  SELECT MAX(avg_sal)
+  FROM (
+    SELECT AVG(SALARY) AS avg_sal
+    FROM   EMPLOYEE
+    GROUP BY DEPT
+  )
+);
+```
+
+
+
