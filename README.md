@@ -153,10 +153,12 @@ CREATE TABLE employee (
 );
 
 -- 2. Make emp_id the primary key
+
 ALTER TABLE employee
   ADD CONSTRAINT pk_employee_empid PRIMARY KEY (emp_id);
 
 -- 3. Make f_name and salary NOT NULL
+
 ALTER TABLE employee
   MODIFY (
     f_name NOT NULL,
@@ -164,10 +166,12 @@ ALTER TABLE employee
   );
 
 -- 4. Add a column date_of_joining
+
 ALTER TABLE employee
   ADD (date_of_joining DATE);
 
 -- 5. Create table department, with d_name as primary key
+
 CREATE TABLE department (
   d_name   VARCHAR2(30),
   d_loc    VARCHAR2(100),
@@ -176,6 +180,7 @@ CREATE TABLE department (
 );
 
 -- 6. Create table location
+
 CREATE TABLE location (
   loc_id     NUMBER(4),
   city       VARCHAR2(50),
@@ -183,6 +188,8 @@ CREATE TABLE location (
 );
 
 -- 7. Enhance size of city by 5 characters (from VARCHAR2(50) → VARCHAR2(55))
+
+
 ALTER TABLE location
   MODIFY (city VARCHAR2(55));
 
@@ -191,20 +198,24 @@ ALTER TABLE location
   DROP COLUMN contact_no;
 
 -- 9. Make dept in employee a foreign key referencing department(d_name)
+
 ALTER TABLE employee
   ADD CONSTRAINT fk_employee_dept
     FOREIGN KEY (dept)
     REFERENCES department(d_name);
 
 -- 10. Rename city to address in location
+
 ALTER TABLE location
   RENAME COLUMN city TO address;
 
 -- 11. Rename table location to loc
+
 ALTER TABLE location
   RENAME TO loc;
 
 -- 12. Insert sample rows into loc (location) table
+
 INSERT INTO loc (loc_id, address) VALUES (1, 'Mumbai');
 INSERT INTO loc (loc_id, address) VALUES (2, 'Delhi');
 INSERT INTO loc (loc_id, address) VALUES (3, 'Bengaluru');
